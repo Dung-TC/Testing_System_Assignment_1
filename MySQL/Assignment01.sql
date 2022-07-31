@@ -5,23 +5,23 @@ USE SA1;
 DROP TABLE IF EXISTS Department;
 CREATE TABLE Department(
 	DepartmentID		INT PRIMARY KEY AUTO_INCREMENT,
-	DepartmentName		VARCHAR(50)
+	DepartmentName		VARCHAR(50) UNIQUE KEY
 );
 
 DROP TABLE IF EXISTS Position;
 CREATE TABLE Position (
 	PositionID			INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    PositionName		VARCHAR(20)
+    PositionName		VARCHAR(20) UNIQUE KEY
 );
 
 DROP TABLE IF EXISTS Account;
 CREATE TABLE `Account` (
 	AccountID		INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-	Email			VARCHAR(20),
+	Email			VARCHAR(20) UNIQUE KEY,
 	Username		VARCHAR(20),
 	FullName		VARCHAR(20),
-	DepartmentID	INT NOT NULL,
-	PositionID		INT NOT NULL,
+	DepartmentID	INT NOT NULL UNIQUE KEY,
+	PositionID		INT NOT NULL UNIQUE KEY,
 	CreateDate		DATETIME,
     CONSTRAINT FOREIGN KEY (DepartmentID) REFERENCES Department(DepartmentID),
     CONSTRAINT FOREIGN KEY (PositionID) REFERENCES `Position` (PositionID)
@@ -32,7 +32,8 @@ CREATE TABLE `Group` (
 	GroupID			INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 	GroupName		VARCHAR(20),
 	CreatorID		INT NOT NULL,
-	CreateDate		DATETIME
+	CreateDate		DATETIME,
+    CONSTRAINT FOREIGN KEY (CreatorID) REFERENCES `Account`(AccountID)
 );
 
 DROP TABLE IF EXISTS GroupAccount;
