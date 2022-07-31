@@ -5,7 +5,7 @@ USE SA1;
 DROP TABLE IF EXISTS Department;
 CREATE TABLE Department(
 	DepartmentID INT PRIMARY KEY AUTO_INCREMENT,
-	DepartmentName CHAR(50)
+	DepartmentName VARCHAR(50)
 );
 
 DROP TABLE IF EXISTS Position;
@@ -62,14 +62,14 @@ CREATE TABLE Question(
 	CategoryID INT,
 	TypeID INT,
 	CreatorID INT,
-	CreateDate date,
+	CreateDate DATETIME,
 	CONSTRAINT FOREIGN KEY (TypeID) REFERENCES TypeQuestion(TypeID)
 );
 
 DROP TABLE IF EXISTS Answer;
 CREATE TABLE Answer(
 	AnswerID INT PRIMARY KEY AUTO_INCREMENT,
-	Content varchar(30),
+	Content VARCHAR(30),
 	QuestionID INT,
 	isCorrect enum('D','S'),
 	CONSTRAINT FOREIGN KEY (QuestionID) REFERENCES Question(QuestionID)
@@ -78,12 +78,12 @@ CREATE TABLE Answer(
 DROP TABLE IF EXISTS Exam;
 CREATE TABLE Exam(
 	ExamID INT PRIMARY KEY AUTO_INCREMENT,
-	Code varchar(10),
-	Title varchar(10),
+	Code VARCHAR(10),
+	Title VARCHAR(10),
 	CategoryID INT,
-	Duration datetime,
+	Duration DATETIME,
 	CreatorID INT,
-	CreateDate date
+	CreateDate DATETIME
 );
 
 DROP TABLE IF EXISTS ExamQuestion;
