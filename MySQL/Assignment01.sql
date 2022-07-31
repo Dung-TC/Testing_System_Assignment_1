@@ -11,12 +11,11 @@ CREATE TABLE Department(
 DROP TABLE IF EXISTS Position;
 CREATE TABLE Position (
 	PositionID INT PRIMARY KEY AUTO_INCREMENT,
-    PositionName VARCHAR(20),
-    CONSTRAINT FOREIGN KEY (PositionID) REFERENCES Account(PositionID)
+    PositionName VARCHAR(20)
 );
 
 DROP TABLE IF EXISTS Account;
-CREATE TABLE Account (
+CREATE TABLE `Account` (
 	AccountID INT PRIMARY KEY AUTO_INCREMENT,
 	Email VARCHAR(20),
 	Username VARCHAR(20),
@@ -25,7 +24,7 @@ CREATE TABLE Account (
 	PositionID INT,
 	CreateDate DATETIME,
     CONSTRAINT FOREIGN KEY (DepartmentID) REFERENCES Department(DepartmentID),
-    CONSTRAINT FOREIGN KEY (PositionID) REFERENCES Position (PositionID)
+    CONSTRAINT FOREIGN KEY (PositionID) REFERENCES `Position` (PositionID)
 );
 
 DROP TABLE IF EXISTS `Group`;
@@ -47,8 +46,7 @@ CREATE TABLE GroupAccount(
 DROP TABLE IF EXISTS TypeQuestion;
 CREATE TABLE TypeQuestion(
 	TypeID INT PRIMARY KEY AUTO_INCREMENT,
-	TypeName VARCHAR(20),
-    CONSTRAINT FOREIGN KEY (TypeID) REFERENCES Question8(TypeID)
+	TypeName VARCHAR(20)
 );
 
 DROP TABLE IF EXISTS CategoryQuestion;
@@ -65,8 +63,7 @@ CREATE TABLE Question(
 	TypeID INT,
 	CreatorID INT,
 	CreateDate date,
-	CONSTRAINT FOREIGN KEY (TypeID) REFERENCES TypeQuestion(TypeID),
-    CONSTRAINT FOREIGN KEY (QuestionID) REFERENCES Answer(QuestionID)
+	CONSTRAINT FOREIGN KEY (TypeID) REFERENCES TypeQuestion(TypeID)
 );
 
 DROP TABLE IF EXISTS Answer;
@@ -86,14 +83,15 @@ CREATE TABLE Exam(
 	CategoryID INT,
 	Duration datetime,
 	CreatorID INT,
-	CreateDate date,
-	CONSTRAINT FOREIGN KEY (ExamID) REFERENCES ExamQuestion(ExamID)
+	CreateDate date
 );
 
 DROP TABLE IF EXISTS ExamQuestion;
 CREATE TABLE ExamQuestion(
 	ExamID INT,
-	QuestionID INT
+	QuestionID INT,
+CONSTRAINT FOREIGN KEY (ExamID) REFERENCES Exam(ExamID),
+CONSTRAINT FOREIGN KEY (QuestionID) REFERENCES Answer(QuestionID)
 );
 
 
