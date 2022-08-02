@@ -5,13 +5,13 @@ USE SA1;
 DROP TABLE IF EXISTS Department;
 CREATE TABLE Department(
 	DepartmentID		INT PRIMARY KEY AUTO_INCREMENT,
-	DepartmentName		VARCHAR(50) UNIQUE KEY
+	DepartmentName		VARCHAR(100) UNIQUE KEY
 );
 
 DROP TABLE IF EXISTS Position;
 CREATE TABLE Position (
 	PositionID			INT PRIMARY KEY AUTO_INCREMENT,
-    PositionName		VARCHAR(20) UNIQUE KEY
+    PositionName		VARCHAR(50) UNIQUE KEY
 );
 
 DROP TABLE IF EXISTS Account;
@@ -22,7 +22,7 @@ CREATE TABLE `Account` (
 	FullName		VARCHAR(20),
 	DepartmentID	INT NOT NULL,
 	PositionID		INT NOT NULL,
-	CreateDate		DATETIME,
+	CreateDate		DATE,
     CONSTRAINT FOREIGN KEY (DepartmentID) REFERENCES Department(DepartmentID),
     CONSTRAINT FOREIGN KEY (PositionID) REFERENCES `Position` (PositionID)
 );
@@ -66,8 +66,8 @@ CREATE TABLE Question(
 	CreatorID		INT NOT NULL,
 	CreateDate		DATETIME,
 	CONSTRAINT FOREIGN KEY (TypeID) REFERENCES TypeQuestion(TypeID),
-    CONSTRAINT FOREIGN KEY (TCreatorID) REFERENCES `Account`(AccountID),
-    CONSTRAINT FOREIGN KEY (CategoryID) REFERENCES CategoryQuestio(CategoryID)
+    CONSTRAINT FOREIGN KEY (CreatorID) REFERENCES `Account`(AccountID),
+    CONSTRAINT FOREIGN KEY (CategoryID) REFERENCES CategoryQuestion(CategoryID)
 );
 
 DROP TABLE IF EXISTS Answer;
@@ -98,6 +98,68 @@ CREATE TABLE ExamQuestion(
 CONSTRAINT FOREIGN KEY (ExamID) REFERENCES Exam(ExamID),
 CONSTRAINT FOREIGN KEY (QuestionID) REFERENCES Answer(QuestionID)
 );
+
+
+
+INSERT INTO Department (DepartmentID, DepartmentName)
+	VALUES ('001', 'Phòng quản lý chất lượng');
+INSERT INTO Department (DepartmentID, DepartmentName)
+	VALUES ('002', 'Phòng kinh doanh');
+INSERT INTO Department (DepartmentID, DepartmentName)
+	VALUES ('003', 'Phòng kế toán');
+INSERT INTO Department (DepartmentID, DepartmentName)
+	VALUES ('004', 'Phòng hành chính');
+INSERT INTO Department (DepartmentID, DepartmentName)
+	VALUES ('005', 'Phòng nhân sự');
+
+
+
+INSERT INTO `Position` (PositionID, PositionName)
+	VALUES ('221', 'Giám đốc');
+INSERT INTO `Position` (PositionID, PositionName)
+	VALUES ('222', 'Giám đốc điều hành');
+INSERT INTO `Position` (PositionID, PositionName)
+	VALUES ('223', 'Giám đốc thông tin');
+INSERT INTO `Position` (PositionID, PositionName)
+	VALUES ('224', 'Giám đốc tài chính');
+INSERT INTO `Position` (PositionID, PositionName)
+	VALUES ('225', 'Chủ tịch');
+
+
+INSERT INTO `Account` (AccountID, Email, Username, FullName, DepartmentID, PositionID, CreateDate)
+	VALUES ('331', 'nguyenvanA@gmail.com', 'NGUYENVANA', 'Nguyễn Văn A', 001 , 221, '2021-02-03');
+INSERT INTO `Account` (AccountID, Email, Username, FullName, DepartmentID, PositionID, CreateDate)
+	VALUES ('332', 'nguyenvanB@gmail.com', 'NGUYENVANB', 'Nguyễn Văn B', 002 , 222, '2020-09-03');
+INSERT INTO `Account` (AccountID, Email, Username, FullName, DepartmentID, PositionID, CreateDate)
+	VALUES ('333', 'nguyenvanC@gmail.com', 'NGUYENVANC', 'Nguyễn Văn C', 003 , 223, '2000-12-03');
+INSERT INTO `Account` (AccountID, Email, Username, FullName, DepartmentID, PositionID, CreateDate)
+	VALUES ('334', 'nguyenvanD@gmail.com', 'NGUYENVAND', 'Nguyễn Văn D', 004 , 224, '2000-02-08');
+INSERT INTO `Account` (AccountID, Email, Username, FullName, DepartmentID, PositionID, CreateDate)
+	VALUES ('335', 'nguyenvanE@gmail.com', 'NGUYENVANE', 'Nguyễn Văn E', 005 , 225, '2001-02-10');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
