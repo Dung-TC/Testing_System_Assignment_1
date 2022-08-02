@@ -139,8 +139,8 @@ INSERT INTO `Account` (AccountID, Email, Username, FullName, DepartmentID, Posit
 
 
 
-
-
+INSERT INTO `Group` (GroupID, GroupName, CreatorID, CreateDate)
+	VALUES (441, 'áo xanh', 331 , '2001-02-10');
 
 
 
