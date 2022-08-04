@@ -17,7 +17,7 @@ CREATE TABLE Position (
 DROP TABLE IF EXISTS Account;
 CREATE TABLE `Account` (
 	AccountID		INT PRIMARY KEY AUTO_INCREMENT,
-	Email			VARCHAR(20) UNIQUE KEY,
+	Email			VARCHAR(50) UNIQUE KEY,
 	Username		VARCHAR(20),
 	FullName		VARCHAR(20),
 	DepartmentID	INT NOT NULL,
@@ -108,9 +108,19 @@ INSERT INTO Department (DepartmentID, DepartmentName)
 INSERT INTO Department (DepartmentID, DepartmentName)
 	VALUES ('003', 'Phòng kế toán');
 INSERT INTO Department (DepartmentID, DepartmentName)
-	VALUES ('004', 'Phòng hành chính');
+	VALUES ('005', 'Sale');
 INSERT INTO Department (DepartmentID, DepartmentName)
-	VALUES ('005', 'Phòng nhân sự');
+	VALUES ('006', 'Phòng nghiên cứu và phát triển');
+INSERT INTO Department (DepartmentID, DepartmentName)
+	VALUES ('007', 'Phòng thư ký');
+INSERT INTO Department (DepartmentID, DepartmentName)
+	VALUES ('008', 'Phòng điều hành');
+INSERT INTO Department (DepartmentID, DepartmentName)
+	VALUES ('009', 'Phòng Giám đốc');
+INSERT INTO Department (DepartmentID, DepartmentName)
+	VALUES ('004', 'Phòng Cổ đông');
+INSERT INTO Department (DepartmentID, DepartmentName)
+	VALUES ('010', 'Phòng bảo an');
 
 
 
@@ -124,6 +134,16 @@ INSERT INTO `Position` (PositionID, PositionName)
 	VALUES ('224', 'Giám đốc tài chính');
 INSERT INTO `Position` (PositionID, PositionName)
 	VALUES ('225', 'Chủ tịch');
+INSERT INTO `Position` (PositionID, PositionName)
+	VALUES ('226', 'Thư ký');
+INSERT INTO `Position` (PositionID, PositionName)
+	VALUES ('227', 'Trưởng phòng Sale');
+INSERT INTO `Position` (PositionID, PositionName)
+	VALUES ('228', 'Giám đốc công nghệ');
+INSERT INTO `Position` (PositionID, PositionName)
+	VALUES ('229', 'Quản lý thông tin');
+INSERT INTO `Position` (PositionID, PositionName)
+	VALUES ('210', 'Lễ tân');
 
 
 INSERT INTO `Account` (AccountID, Email, Username, FullName, DepartmentID, PositionID, CreateDate)
@@ -135,13 +155,40 @@ INSERT INTO `Account` (AccountID, Email, Username, FullName, DepartmentID, Posit
 INSERT INTO `Account` (AccountID, Email, Username, FullName, DepartmentID, PositionID, CreateDate)
 	VALUES ('334', 'nguyenvanD@gmail.com', 'NGUYENVAND', 'Nguyễn Văn D', 004 , 224, '2000-02-08');
 INSERT INTO `Account` (AccountID, Email, Username, FullName, DepartmentID, PositionID, CreateDate)
-	VALUES ('335', 'nguyenvanE@gmail.com', 'NGUYENVANE', 'Nguyễn Văn E', 005 , 225, '2001-02-10');
+	VALUES ('335', 'nguyenvanE@gmail.com', 'NGUYENVANE', 'Nguyễn Văn E', 005 , 225, '2021-02-10');
+INSERT INTO `Account` (AccountID, Email, Username, FullName, DepartmentID, PositionID, CreateDate)
+	VALUES ('336', 'nguyenvanae@gmail.com', 'NGUYENVANH', 'Nguyễn Văn H', 006 , 225, '2008-02-5');
+INSERT INTO `Account` (AccountID, Email, Username, FullName, DepartmentID, PositionID, CreateDate)
+	VALUES ('337', 'nguyenvanQƯE@gmail.com', 'NGUYENVANJ', 'Nguyễn Văn K', 006 , 226, '2018-03-12');
+INSERT INTO `Account` (AccountID, Email, Username, FullName, DepartmentID, PositionID, CreateDate)
+	VALUES ('338', 'nguyenvanÁD@gmail.com', 'NGUYENVANK', 'Nguyễn Văn T', 007 , 229, '2022-09-5');
+INSERT INTO `Account` (AccountID, Email, Username, FullName, DepartmentID, PositionID, CreateDate)
+	VALUES ('339', 'nguyenvanZXC@gmail.com', 'NGUYENVANL', 'Nguyễn Văn M', 008 , 210, '2015-10-12');
+INSERT INTO `Account` (AccountID, Email, Username, FullName, DepartmentID, PositionID, CreateDate)
+	VALUES ('310', 'nguyenvanRTY@gmail.com', 'NGUYENVANM', 'Nguyễn Văn V', 005 , 227, '2018-11-10');
 
 
 
 INSERT INTO `Group` (GroupID, GroupName, CreatorID, CreateDate)
-	VALUES (441, 'áo xanh', 331 , '2001-02-10');
-
+	VALUES (441, 'áo xanh', 331 , '2021-02-10');
+INSERT INTO `Group` (GroupID, GroupName, CreatorID, CreateDate)
+	VALUES (442, 'áo đen', 331 , '2018-03-10');
+INSERT INTO `Group` (GroupID, GroupName, CreatorID, CreateDate)
+	VALUES (443, 'áo trắng', 335 , '2019-12-20');
+INSERT INTO `Group` (GroupID, GroupName, CreatorID, CreateDate)
+	VALUES (444, 'áo vàng', 333 , '2017-04-10');
+INSERT INTO `Group` (GroupID, GroupName, CreatorID, CreateDate)
+	VALUES (445, 'áo đỏ', 334 , '2020-10-10');
+INSERT INTO `Group` (GroupID, GroupName, CreatorID, CreateDate)
+	VALUES (446, 'áo lam', 331 , '2009-11-20');
+INSERT INTO `Group` (GroupID, GroupName, CreatorID, CreateDate)
+	VALUES (447, 'cà tím', 332 , '2022-02-19');
+INSERT INTO `Group` (GroupID, GroupName, CreatorID, CreateDate)
+	VALUES (448, 'cà pháo', 333 , '2018-12-21');
+INSERT INTO `Group` (GroupID, GroupName, CreatorID, CreateDate)
+	VALUES (449, 'cà xanh', 336 , '2019-08-17');
+INSERT INTO `Group` (GroupID, GroupName, CreatorID, CreateDate)
+	VALUES (4410, 'cà muối', 332 , '2002-07-10');
 
 
 
