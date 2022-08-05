@@ -192,23 +192,166 @@ INSERT INTO `Group` (GroupID, GroupName, CreatorID, CreateDate)
 
 
 
+INSERT INTO GroupAccount (GroupID, AccountID, JoinDate)
+	VALUES (GroupID, AccountID, JoinDate);
+INSERT INTO GroupAccount (GroupID, AccountID, JoinDate)
+	VALUES (GroupID, AccountID, JoinDate);
+INSERT INTO GroupAccount (GroupID, AccountID, JoinDate)
+	VALUES (GroupID, AccountID, JoinDate);
+INSERT INTO GroupAccount (GroupID, AccountID, JoinDate)
+	VALUES (GroupID, AccountID, JoinDate);
+INSERT INTO GroupAccount (GroupID, AccountID, JoinDate)
+	VALUES (GroupID, AccountID, JoinDate);
+INSERT INTO GroupAccount (GroupID, AccountID, JoinDate)
+	VALUES (GroupID, AccountID, JoinDate);
+INSERT INTO GroupAccount (GroupID, AccountID, JoinDate)
+	VALUES (GroupID, AccountID, JoinDate);
+INSERT INTO GroupAccount (GroupID, AccountID, JoinDate)
+	VALUES (GroupID, AccountID, JoinDate);
+INSERT INTO GroupAccount (GroupID, AccountID, JoinDate)
+	VALUES (GroupID, AccountID, JoinDate);
+INSERT INTO GroupAccount (GroupID, AccountID, JoinDate)
+	VALUES (GroupID, AccountID, JoinDate);
+
+
+
+INSERT INTO GroupAccount (GroupID, AccountID, JoinDate)
+	VALUES (GroupID, AccountID, JoinDate);
+INSERT INTO GroupAccount (GroupID, AccountID, JoinDate)
+	VALUES (GroupID, AccountID, JoinDate);
+INSERT INTO GroupAccount (GroupID, AccountID, JoinDate)
+	VALUES (GroupID, AccountID, JoinDate);
+INSERT INTO GroupAccount (GroupID, AccountID, JoinDate)
+	VALUES (GroupID, AccountID, JoinDate);
+INSERT INTO GroupAccount (GroupID, AccountID, JoinDate)
+	VALUES (GroupID, AccountID, JoinDate);
+INSERT INTO GroupAccount (GroupID, AccountID, JoinDate)
+	VALUES (GroupID, AccountID, JoinDate);
+INSERT INTO GroupAccount (GroupID, AccountID, JoinDate)
+	VALUES (GroupID, AccountID, JoinDate);
+INSERT INTO GroupAccount (GroupID, AccountID, JoinDate)
+	VALUES (GroupID, AccountID, JoinDate);
+INSERT INTO GroupAccount (GroupID, AccountID, JoinDate)
+	VALUES (GroupID, AccountID, JoinDate);
+INSERT INTO GroupAccount (GroupID, AccountID, JoinDate)
+	VALUES (GroupID, AccountID, JoinDate);
 
 
 
 
+INSERT INTO TypeQuestion (TypeID, TypeName)
+	VALUES (TypeID, TypeName);
+INSERT INTO TypeQuestion (TypeID, TypeName)
+	VALUES (TypeID, TypeName);
+INSERT INTO TypeQuestion (TypeID, TypeName)
+	VALUES (TypeID, TypeName);
+INSERT INTO TypeQuestion (TypeID, TypeName)
+	VALUES (TypeID, TypeName);
+INSERT INTO TypeQuestion (TypeID, TypeName)
+	VALUES (TypeID, TypeName);
+INSERT INTO TypeQuestion (TypeID, TypeName)
+	VALUES (TypeID, TypeName);
+INSERT INTO TypeQuestion (TypeID, TypeName)
+	VALUES (TypeID, TypeName);
+INSERT INTO TypeQuestion (TypeID, TypeName)
+	VALUES (TypeID, TypeName);
+INSERT INTO TypeQuestion (TypeID, TypeName)
+	VALUES (TypeID, TypeName);
+INSERT INTO TypeQuestion (TypeID, TypeName)
+	VALUES (TypeID, TypeName);
 
 
 
 
+INSERT INTO CategoryQuestion (CategoryID, CategoryName)
+	VALUES (CategoryID, CategoryName);
+INSERT INTO CategoryQuestion (CategoryID, CategoryName)
+	VALUES (CategoryID, CategoryName);
+INSERT INTO CategoryQuestion (CategoryID, CategoryName)
+	VALUES (CategoryID, CategoryName);
+INSERT INTO CategoryQuestion (CategoryID, CategoryName)
+	VALUES (CategoryID, CategoryName);
+INSERT INTO CategoryQuestion (CategoryID, CategoryName)
+	VALUES (CategoryID, CategoryName);
+INSERT INTO CategoryQuestion (CategoryID, CategoryName)
+	VALUES (CategoryID, CategoryName);
+INSERT INTO CategoryQuestion (CategoryID, CategoryName)
+	VALUES (CategoryID, CategoryName);
+INSERT INTO CategoryQuestion (CategoryID, CategoryName)
+	VALUES (CategoryID, CategoryName);
+INSERT INTO CategoryQuestion (CategoryID, CategoryName)
+	VALUES (CategoryID, CategoryName);
+INSERT INTO CategoryQuestion (CategoryID, CategoryName)
+	VALUES (CategoryID, CategoryName);
 
 
 
+INSERT INTO Question (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate)
+	VALUES (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate);
+INSERT INTO Question (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate)
+	VALUES (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate);
+INSERT INTO Question (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate)
+	VALUES (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate);
+INSERT INTO Question (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate)
+	VALUES (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate);
+INSERT INTO Question (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate)
+	VALUES (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate);
+INSERT INTO Question (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate)
+	VALUES (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate);
+INSERT INTO Question (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate)
+	VALUES (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate);
+INSERT INTO Question (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate)
+	VALUES (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate);
+INSERT INTO Question (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate)
+	VALUES (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate);
+INSERT INTO Question (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate)
+	VALUES (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate);
 
 
 
+INSERT INTO Answer (AnswerID, Content, QuestionID, isCorrect)
+	VALUES (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate);
+INSERT INTO Answer (AnswerID, Content, QuestionID, isCorrect)
+	VALUES (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate);
+INSERT INTO Answer (AnswerID, Content, QuestionID, isCorrect)
+	VALUES (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate);
+INSERT INTO Answer (AnswerID, Content, QuestionID, isCorrect)
+	VALUES (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate);
+INSERT INTO Answer (AnswerID, Content, QuestionID, isCorrect)
+	VALUES (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate);
+INSERT INTO Answer (AnswerID, Content, QuestionID, isCorrect)
+	VALUES (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate);
+INSERT INTO Answer (AnswerID, Content, QuestionID, isCorrect)
+	VALUES (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate);
+INSERT INTO Answer (AnswerID, Content, QuestionID, isCorrect)
+	VALUES (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate);
+INSERT INTO Answer (AnswerID, Content, QuestionID, isCorrect)
+	VALUES (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate);
+INSERT INTO Answer (AnswerID, Content, QuestionID, isCorrect)
+	VALUES (QuestionID, Content, CategoryID, TypeID, CreatorID, CreateDate);
 
 
 
+INSERT INTO Exam (ExamID, Code, Title, CategoryID, Duration, CreatorID, CreateDate)
+	VALUES (ExamID, Code, Title, CategoryID, Duration, CreatorID, CreateDate);
+INSERT INTO Exam (ExamID, Code, Title, CategoryID, Duration, CreatorID, CreateDate)
+	VALUES (ExamID, Code, Title, CategoryID, Duration, CreatorID, CreateDate);
+INSERT INTO Exam (ExamID, Code, Title, CategoryID, Duration, CreatorID, CreateDate)
+	VALUES (ExamID, Code, Title, CategoryID, Duration, CreatorID, CreateDate);
+INSERT INTO Exam (ExamID, Code, Title, CategoryID, Duration, CreatorID, CreateDate)
+	VALUES (ExamID, Code, Title, CategoryID, Duration, CreatorID, CreateDate);
+INSERT INTO Exam (ExamID, Code, Title, CategoryID, Duration, CreatorID, CreateDate)
+	VALUES (ExamID, Code, Title, CategoryID, Duration, CreatorID, CreateDate);
+INSERT INTO Exam (ExamID, Code, Title, CategoryID, Duration, CreatorID, CreateDate)
+	VALUES (ExamID, Code, Title, CategoryID, Duration, CreatorID, CreateDate);
+INSERT INTO Exam (ExamID, Code, Title, CategoryID, Duration, CreatorID, CreateDate)
+	VALUES (ExamID, Code, Title, CategoryID, Duration, CreatorID, CreateDate);
+INSERT INTO Exam (ExamID, Code, Title, CategoryID, Duration, CreatorID, CreateDate)
+	VALUES (ExamID, Code, Title, CategoryID, Duration, CreatorID, CreateDate);
+INSERT INTO Exam (ExamID, Code, Title, CategoryID, Duration, CreatorID, CreateDate)
+	VALUES (ExamID, Code, Title, CategoryID, Duration, CreatorID, CreateDate);
+INSERT INTO Exam (ExamID, Code, Title, CategoryID, Duration, CreatorID, CreateDate)
+	VALUES (ExamID, Code, Title, CategoryID, Duration, CreatorID, CreateDate);
 
 
 
