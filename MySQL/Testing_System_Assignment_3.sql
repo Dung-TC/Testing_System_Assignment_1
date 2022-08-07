@@ -9,18 +9,17 @@ SELECT *
 -- Question 3: lấy ra id của phòng ban "Sale"
 SELECT DepartmentID 
 	FROM Department 
-    WHERE DepartmentName = 'Sale';
+	WHERE DepartmentName = 'Sale';
     
 -- Question 4: lấy ra thông tin account có full name dài nhất    
 SELECT * 
 	FROM `Account`
-    WHERE LENGTH(Fullname) = (SELECT MAX(LENGTH(Fullname)) FROM `Account`)
+	WHERE LENGTH(Fullname) = (SELECT MAX(LENGTH(Fullname)) FROM `Account`)
     ; 
 
 -- Question 5: Lấy ra thông tin account có full name dài nhất và thuộc phòng ban có id= 3
-WITH PB_3 AS (SELECT * 
-				FROM `Account` 
-                WHERE DepartmentID = '3')
+WITH PB_3 AS (SELECT * FROM `Account` 
+				WHERE DepartmentID = '3')
 SELECT *
 	FROM PB_3
 	WHERE LENGTH(Fullname) = (SELECT MAX(LENGTH(Fullname)) FROM PB_3);
@@ -28,7 +27,7 @@ SELECT *
 -- Question 6: Lấy ra tên group đã tham gia trước ngày 20/12/2019
 SELECT *
 	FROM `Group`
-    WHERE CreateDate < '2019-12-20';
+	WHERE CreateDate < '2019-12-20';
 
 -- Question 7: Lấy ra ID của question có >= 4 câu trả lời
 SELECT QuestionID, COUNT(QuestionID) 
@@ -81,8 +80,8 @@ WHERE Content LIKE('câu hỏi %');
 
 -- Question 14: Update thông tin của account có id = 5 thành tên "Nguyễn Bá Lộc" và email thành loc.nguyenba@vti.com.vn
 UPDATE `account`
-	SET 	FullName = 'Nguyễn Bá Lộc' , 
-			Email = 'loc.nguyenba@vti.com.vn'
+	SET FullName = 'Nguyễn Bá Lộc' , 
+		Email = 'loc.nguyenba@vti.com.vn'
 	WHERE AccountID = 5 ;
 
 -- Question 15: update account có id = 5 sẽ thuộc group có id = 4
