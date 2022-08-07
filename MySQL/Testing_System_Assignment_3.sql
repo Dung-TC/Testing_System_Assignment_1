@@ -87,10 +87,12 @@ UPDATE `account`
 
 -- Question 15: update account có id = 5 sẽ thuộc group có id = 4
 
-
-
-
-
+-- COMMIT;
+UPDATE groupaccount
+set GroupID = 4
+where AccountID =5
+;
+-- ROLLBACK;
 
 
 

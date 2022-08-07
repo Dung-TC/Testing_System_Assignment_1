@@ -134,7 +134,7 @@ VALUES 	('Email1@gmail.com' ,'Username1' ,'Fullname1' , 5 , 1,'2020-03-05'),
         ('Email9@gmail.com' , 'Username9' ,'Fullname9', 2 , 2 ,'2020-04-07'),
         ('Email10@gmail.com' , 'Username10' ,'Fullname10', 10 , 1 ,'2020-04-09'),
         ('Email11@gmail.com' , 'Username11' ,'Fullname11', 10 , 1 , DEFAULT),
-			('Email13@gmail.com' , 'Username13' ,'DFullme11o', 10 , 1 , DEFAULT),
+		('Email13@gmail.com' , 'Username13' ,'DFullme11o', 10 , 1 , DEFAULT),
         ('Email12@gmail.com' , 'Username12','Fullname12' , 10 , 1 , DEFAULT);
 
 INSERT INTO `Group`(GroupName , CreatorID , CreateDate)
