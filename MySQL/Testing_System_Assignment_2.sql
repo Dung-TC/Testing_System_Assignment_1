@@ -1,6 +1,5 @@
 DROP DATABASE IF EXISTS Testing_System_Assignment_2;
 CREATE DATABASE Testing_System_Assignment_2;
-
 USE Testing_System_Assignment_2;
 
 DROP TABLE IF EXISTS `Department`;
@@ -40,7 +39,7 @@ CREATE TABLE `Group`(
 DROP TABLE IF EXISTS GroupAccount;
 CREATE TABLE GroupAccount(
 	GroupID 		TINYINT UNSIGNED NOT NULL,
-	AccountID 		TINYINT UNSIGNED NOT NULL,
+	AccountID 		TINYINT UNSIGNED NOT NULL, -- NOT NULL
 	JoinDate 		DATETIME DEFAULT NOW(),
 	PRIMARY KEY (GroupID,AccountID),
 	FOREIGN KEY(GroupID) REFERENCES `Group`(GroupID),
@@ -161,6 +160,7 @@ VALUES 	(1 , 1,'2019-03-05'),
 		(1 , 9,'2020-04-09'),
 		(10 , 10,'2020-04-10');
 
+
 INSERT INTO TypeQuestion(TypeName)
 VALUES 	('Essay'),
 		('Multiple-Choice');
@@ -187,7 +187,10 @@ VALUES 	('Câu hỏi về Java' , 1 ,'1' , '2' ,'2020-04-05'),
 		('Hỏi về ASP.NET' , 2 ,'1' , '7' ,'2020-04-06'),
 		('Hỏi về C++' , 8 ,'1' , '8' ,'2020-04-07'),
 		('Hỏi về SQL' , 4 ,'2' , '9' ,'2020-04-07'),
-		('Hỏi về Python' , 7 ,'1' , '10' ,'2020-04-07');
+		('Hỏi về Python' , 7 ,'1' , '10' ,'2020-04-07'),
+
+		('Hỏi về ứng dụng Python' , 7 ,'1' , '10' ,'2020-04-07'),
+        ('Hỏi về nền tảng Python' , 7 ,'1' , '10' ,'2020-04-07');
 
 INSERT INTO Answer(Content , QuestionID , isCorrect)
 VALUES 	('Trả lời 01' , 1 , 0),

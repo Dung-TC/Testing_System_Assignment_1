@@ -39,7 +39,7 @@ SELECT QuestionID, COUNT(QuestionID)
 -- Question 8: Lấy ra các mã đề thi có thời gian thi >= 60 phút và được tạo trước ngày 20/12/2019
 SELECT `code`, Duration
 	FROM exam
-	WHERE Duration >= 60 AND CreateDate <= '2019-12-20'
+	WHERE Duration >= 60 AND CreateDate < '2019-12-20'
 	;
 
 -- Question 9: Lấy ra 5 group được tạo gần đây nhất
