@@ -126,7 +126,7 @@ VALUES 	('Email1@gmail.com' ,'Username1' ,'Fullname1' , 5 , 1,'2020-03-05'),
 		('Email2@gmail.com' ,'Username2' ,'Fullname2' , 1 , 2,'2020-03-05'),
 		('Email3@gmail.com' , 'Username3' ,'Fullname3', 2 , 2 ,'2020-03-07'),
         ('Email4@gmail.com' , 'Username4' ,'Fullname4', 3 , 4 ,'2020-03-08'),
-        ('Email5@gmail.com' , 'Username5' ,'Fullname5', 4 , 4 ,'2020-03-10'),
+        ('Email5@gmail.com' , 'Username5' ,'NGUYEN Fullname5', 4 , 4 ,'2020-03-10'),
         ('Email6@gmail.com' , 'Username6' ,'Fullname6', 6 , 3 ,'2020-04-05'),
         ('Email7@gmail.com' , 'Username7' ,'Fullname7', 2 , 2 , NULL ),
         ('Email8@gmail.com' , 'Username8' ,'Fullname8', 8 , 1 ,'2020-04-07'),
@@ -190,7 +190,9 @@ VALUES 	('Câu hỏi về Java' , 1 ,'1' , '2' ,'2020-04-05'),
 		('Hỏi về Python' , 7 ,'1' , '10' ,'2020-04-07'),
 
 		('Hỏi về ứng dụng Python' , 7 ,'1' , '10' ,'2020-04-07'),
-        ('Hỏi về nền tảng Python' , 7 ,'1' , '10' ,'2020-04-07');
+        ('Hỏi về nền tảng Python' , 7 ,'1' , '10' ,'2020-04-07'),
+                ('Mưa phảng phất trong không gian ấm áp' , 7 ,'1' , '10' ,'2020-04-07')
+        ;
 
 INSERT INTO Answer(Content , QuestionID , isCorrect)
 VALUES 	('Trả lời 01' , 1 , 0),
