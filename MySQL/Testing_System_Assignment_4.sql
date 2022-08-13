@@ -117,11 +117,16 @@ ORDER BY BN_CHUC_VU
 
 -- Question 12: Lấy thông tin chi tiết của câu hỏi bao gồm: thông tin cơ bản của question, loại câu hỏi, ai là người tạo ra câu hỏi, câu trả lời là gì, ...
 SELECT Q.QuestionID, Q.Content, AC.FullName, T.TypeName, A.Content, C.CategoryName
-FROM question Q
-JOIN Answer A ON Q.QuestionID = A.QuestionID
-JOIN TypeQuestion T ON Q.TypeID = T.TypeID
-JOIN CategoryQuestion C ON C.CategoryID = Q.CategoryID
-JOIN `Account` AC ON AC.AccountID = Q.CreatorID
+FROM 
+	question Q
+		JOIN 
+	Answer A ON Q.QuestionID = A.QuestionID
+		JOIN 
+	TypeQuestion T ON Q.TypeID = T.TypeID
+		JOIN 
+	CategoryQuestion C ON C.CategoryID = Q.CategoryID
+		JOIN 
+	`Account` AC ON AC.AccountID = Q.CreatorID
 ORDER BY Q.QuestionID
 ;
 
