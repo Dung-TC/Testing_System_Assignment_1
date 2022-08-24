@@ -170,27 +170,127 @@ DELIMITER ;
 -- dụng store ở câu 9 để xóa)
 -- Sau đó in số lượng record đã remove từ các table liên quan trong khi
 -- removing
+DROP PROCEDURE IF EXISTS DELETE_EXAM_3YEAR;
+DELIMITER $$
+CREATE PROCEDURE DELETE_EXAM_3YEAR()
+BEGIN
+	DECLARE v_ExamID TINYINT UNSIGNED;
+	DECLARE v_CountExam TINYINT UNSIGNED DEFAULT 0;
+	DECLARE v_CountExamquestion TINYINT UNSIGNED DEFAULT 0;
+	DECLARE i TINYINT UNSIGNED DEFAULT 1;
+	DECLARE v_print_Del_info_Exam VARCHAR(50) ;
 
+	DROP TABLE IF EXISTS ExamID_EXAM_3YEAR;
+	CREATE TABLE ExamID_EXAM_3YEAR(ID INT PRIMARY KEY AUTO_INCREMENT, ExamID INT);
 
-
-
-
-
-
-
-
+	INSERT INTO ExamID_EXAM_3YEAR(ExamID)
+	SELECT E.ExamID FROM Exam E WHERE (YEAR(NOW()) - YEAR(E.CreateDate)) >2;
+    
+    SELECT COUNT(1) INTO v_CountExam FROM ExamID_EXAM_3YEAR;
+	SELECT COUNT(1) INTO v_CountExamquestion FROM examquestion E
+	INNER JOIN ExamID_EXAM_3YEAR ET ON E.ExamID = ET.ExamID;
+    
+    WHILE (i <= v_CountExam) DO
+	SELECT ExamID INTO v_ExamID FROM ExamID_EXAM_3YEAR WHERE ID=i;
+	CALL store_delete(v_ExamID);
+	SET i = i +1;
+	END WHILE;
+    
+    SELECT CONCAT("DELETE ",v_CountExam," IN Exam AND ", v_CountExamquestion ," IN ExamQuestion") 
+		INTO v_print_Del_info_Exam;
+	SIGNAL SQLSTATE '45000'
+	SET MESSAGE_TEXT = v_print_Del_info_Exam ;
+    
+    DROP TABLE IF EXISTS ExamID_EXAM_3YEAR;
+END$$
+DELIMITER ;
 
 
 -- Question 11: Viết store cho phép người dùng xóa phòng ban bằng cách người dùng
 -- nhập vào tên phòng ban và các account thuộc phòng ban đó sẽ được
 -- chuyển về phòng ban default là phòng ban chờ việc
-
-
+DROP PROCEDURE IF EXISTS store_xoa_departm;
+DELIMITER $$
+CREATE PROCEDURE store_xoa_departm(IN var_DepartmentName VARCHAR(30))
+BEGIN
+	DECLARE v_DepartmentID VARCHAR(30) ;
+	SELECT D1.DepartmentID INTO v_DepartmentID 
+    FROM department D1 
+    WHERE D1.DepartmentName = var_DepartmentName;
+	UPDATE `account` A SET A.DepartmentID = '11' 
+		WHERE A.DepartmentID = v_DepartmentID;
+	DELETE FROM department D
+		WHERE D.DepartmentName = var_DepartmentName;
+END$$
+DELIMITER ;
+Call store_xoa_departm('Marketing');
 
 -- Question 12: Viết store để in ra mỗi tháng có bao nhiêu câu hỏi được tạo trong năm nay
-
+DROP PROCEDURE IF EXISTS store_QUES_YEAR_NOW;
+DELIMITER $$
+CREATE PROCEDURE store_QUES_YEAR_NOW()
+BEGIN
+WITH CTE_12Months AS (
+SELECT 1 AS MONTH
+UNION SELECT 2 AS MONTH
+UNION SELECT 3 AS MONTH
+UNION SELECT 4 AS MONTH
+UNION SELECT 5 AS MONTH
+UNION SELECT 6 AS MONTH
+UNION SELECT 7 AS MONTH
+UNION SELECT 8 AS MONTH
+UNION SELECT 9 AS MONTH
+UNION SELECT 10 AS MONTH
+UNION SELECT 11 AS MONTH
+UNION SELECT 12 AS MONTH
+)
+SELECT M.MONTH, COUNT(MONTH(Q.CreateDate)) AS SL 
+	FROM CTE_12Months M
+		LEFT JOIN 
+    (SELECT * FROM question Q1 WHERE YEAR(Q1.CreateDate) = YEAR(NOW())) Q
+		ON 
+    M.MONTH = MONTH(Q.CreateDate)
+GROUP BY M.MONTH;
+END$$
+DELIMITER ;
 
 -- Question 13: Viết store để in ra mỗi tháng có bao nhiêu câu hỏi được tạo trong 6
 -- tháng gần đây nhất
 -- (Nếu tháng nào không có thì sẽ in ra là "không có câu hỏi nào trong
 -- tháng")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
