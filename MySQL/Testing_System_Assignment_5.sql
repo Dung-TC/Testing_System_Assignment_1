@@ -40,11 +40,10 @@ DROP VIEW IF EXISTS W_DELETE_CONTENT_300;
 CREATE VIEW W_DELETE_CONTENT_300 AS
 SELECT *, LENGTH(Content)
 FROM Question
+WHERE LENGTH(Content) > 300
 ;
 
-DELETE FROM Question
-WHERE 300 < ( SELECT * FROM W_DELETE_CONTENT_300)
-;
+DELETE FROM W_DELETE_CONTENT_300;
 
 -- Question 4: Tạo view có chứa danh sách các phòng ban có nhiều nhân viên nhất
 DROP VIEW IF EXISTS W_Department_AC_MAX;
@@ -66,7 +65,7 @@ FROM
 	Question Q
 		JOIN 
     `Account` A ON Q.CreatorID = A.AccountID
-WHERE FullName LIKE "NGUYEN%"
+WHERE A.FullName LIKE "NGUYEN%"
 ;
 
 
